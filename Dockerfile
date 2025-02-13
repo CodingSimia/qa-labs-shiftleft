@@ -1,10 +1,10 @@
-FROM  ubuntu:22.04
+FROM  ubuntu:20.04
 
 EXPOSE 80
 
 RUN apt update && apt install -y nginx
 RUN service nginx stop
 
-COPY docs/public /var/www/html
+COPY docs /var/www/html
 
 CMD ["nginx", "-g", "daemon off;" ]
